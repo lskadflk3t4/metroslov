@@ -1,5 +1,5 @@
 /* Метро слов — service worker : tout fonctionne hors ligne après la première visite */
-const VERSION = "metro-slov-v2";
+const VERSION = "metro-slov-v3";
 const CORE = ["./", "./index.html", "./manifest.webmanifest",
   "./icons/icon-192.png", "./icons/icon-512.png", "./icons/maskable-192.png",
   "./icons/maskable-512.png", "./icons/apple-touch-icon.png"];
