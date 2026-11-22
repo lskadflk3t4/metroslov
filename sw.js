@@ -10,7 +10,8 @@ self.addEventListener("install", e => {
 });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(
-    ks.filter(k => k !== VERSION && k !== FONTS).map(k => caches.delete(k))
+    /* other apps on the same github.io address share this cache store: only remove our own old caches */
+    ks.filter(k => k.startsWith("metro-slov") && k !== VERSION && k !== FONTS).map(k => caches.delete(k))
   )).then(() => self.clients.claim()));
 });
 self.addEventListener("fetch", e => {
